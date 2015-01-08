@@ -1,0 +1,328 @@
+block-history {
+  display: block;
+
+  button {
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus, &:focus:active {
+      outline: none !important;
+    }
+  }
+
+  nav {
+    position: relative;
+    display: block;
+    height: 40px;
+
+    .btn {
+      font-size: 14px;
+      border: 1px solid #bcbec0;
+      background: #e6e7e8;
+      border-radius: 0px;
+      padding: 6px;
+
+      span {
+        background: #000;
+        color: #fff;
+        padding: 3px 12px;
+      }
+    }
+
+    .btn-round {
+      border-radius: 50%;
+      padding: 3px;
+
+      span {
+        border-radius: 50%;
+
+        &.info {
+          padding: 1px 8px;
+        }
+
+        &.fill {
+          padding: 1px 5px;
+        }
+      }
+    }
+
+    .bar-container {
+      width: 500px;
+      display: inline-block;
+
+      .bar {
+        float: left;
+
+        div {
+          height: 15px;
+        }
+
+        strong {
+          font-size: 20px;
+        }
+
+        &.red {
+          div {
+            background: #BB242E;
+          }
+
+          strong {
+            color: #BB242E;
+          }
+        }
+
+        &.blue {
+          div {
+            background: #136A90;
+          }
+
+          strong {
+            color: #136A90;
+          }
+        }
+      }
+    }
+
+    .right-menu {
+      float: right;
+
+      @media (max-width: 420px) {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        float: left;
+      }
+
+      .switcher {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+
+        @media (max-width: 420px) {
+          margin-left: 0;
+        }
+
+        .btn {
+          float: left;
+        }
+      }
+    }
+  }
+
+  area-chart {
+    position: relative;
+    display: block;
+
+    .period-indicator {
+      position: absolute;
+      height: 20px;
+      padding: 0 4px;
+      font-size: 12px;
+      background: #fff;
+      border: 1px solid #9c9c9c;
+      border-bottom: none;
+    }
+
+    .chart {
+      .overlay {
+        fill: transparent;
+      }
+
+      .focus {
+        line {
+          stroke: #000;
+          stroke-width: 1;
+        }
+      }
+
+      .areas {
+        display: block;
+      }
+
+      .election-result {
+        line {
+          stroke: #76C276;
+          stroke-width: 1;
+          shape-rendering: crispEdges;
+        }
+
+        text {
+          text-anchor: middle;
+          font-size: 12px;
+          font-weight: bold;
+          fill: #76C276;
+        }
+      }
+    }
+
+    .brush {
+      .overlay {
+        fill: rgba(255,255,255,0.7);
+      }
+
+      line {
+        stroke: #000;
+        stroke-width: 1;
+      }
+
+      rect.control {
+        visibility: visible !important;
+        fill: #e6e7e8;
+        stroke: #9c9c9c;
+        stroke-width: 1px;
+        shape-rendering: crispEdges;
+      }
+
+      text.control {
+        font: {
+          family: FontAwesome;
+          size: 20px;
+        }
+        fill: #ef8535;
+
+        &.icon {
+          font-size: 15px;
+        }
+      }
+
+      .extent {
+        fill: none;
+      }
+    }
+
+    .axis {
+      &.y {
+        path {
+          display: none;
+          fill-opacity: 0.2;
+        }
+
+        line {
+          stroke: #999;
+          stroke-width: 1;
+          fill: none;
+          opacity: 1;
+          shape-rendering: crispEdges;
+        }
+
+        text {
+          font-size: 15px;
+          fill: #ccc;
+          font-weight: bold;
+        }
+
+        g:first-child {
+          text {
+            display: none;
+          }
+        }
+      }
+
+      &.x {
+        text {
+          font-size: 12px;
+        }
+
+        path {
+          fill: none;
+        }
+
+        line {
+          stroke: #000;
+          stroke-width: 1;
+          shape-rendering: crispEdges;
+        }
+      }
+    }
+
+  }
+
+  app-info {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    z-index: 1;
+    max-width: 350px;
+    padding: 25px 10px 0 10px;
+    background: #fff;
+    border: 1px solid #000;
+    font-size: 12px;
+
+    .close {
+      position: absolute;
+      top: -4px;
+      right: 4px;
+      font-weight: lighter;
+    }
+  }
+}
+
+.d3-tip {
+  background: #fff;
+  border: 2px solid #ccc;
+  pointer-events: none;
+
+  header {
+    background: #ddd;
+    border-bottom: 2px solid #ccc;
+    padding: 0 7px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 3px 0;
+
+    li {
+      padding: 0px 7px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+$arrowSize: 10px;
+
+.d3-tip:after, .d3-tip:before {
+  top: $arrowSize;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.d3-tip.e:after {
+  right: 100%;
+  border-color: rgba(221, 221, 221, 0);
+  border-right-color: #ddd;
+  border-width: $arrowSize;
+  margin-top: -$arrowSize;
+}
+
+.d3-tip.e:before {
+  right: 100%;
+  border-color: rgba(204, 204, 204, 0);
+  border-right-color: #ccc;
+  border-width: $arrowSize + 3;
+  margin-top: -$arrowSize - 3;
+}
+
+.d3-tip.w:after {
+  left: 100%;
+  border-color: rgba(221, 221, 221, 0);
+  border-left-color: #ddd;
+  border-width: $arrowSize;
+  margin-top: -$arrowSize;
+}
+
+.d3-tip.w:before {
+  left: 100%;
+  border-color: rgba(204, 204, 204, 0);
+  border-left-color: #ccc;
+  border-width: $arrowSize + 3;
+  margin-top: -$arrowSize - 3;
+}

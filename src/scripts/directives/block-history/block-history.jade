@@ -1,0 +1,30 @@
+nav(role="navigation")
+  div.bar-container
+    div.red.bar
+      div
+      strong
+    div.blue.bar
+      div
+      strong
+    .clearfix
+  div.right-menu
+    button.btn.btn-round(ng-click="showAppInfo=true")
+      span.info
+        i.fa.fa-info
+    button.btn.btn-round(ng-click="showFill()")
+      span.fill
+        i.fa.fa-adjust
+    div.switcher
+      button.btn(type="button" ng-class="{active: view=='mandates'}" ng-click="view='mandates'") VIS MANDATER
+      button.btn(type="button" ng-class="{active: view=='percent'}" ng-click="view='percent'") VIS PROCENTER
+  app-info(ng-show="showAppInfo")
+    .close(ng-click="showAppInfo=false") &times;
+    p Oplyste dato angiver, hvornår en måling er afsluttet hos analyseinstituttet.
+    p Mandatvisningen medtager kun de 175 danske mandater. De fire nordatlantiske mandater er ikke medtaget.
+    p
+      | Berlingske Barometer viser et gennemsnit af de politiske meningsmålinger, der er blevet offentliggjort inden for de seneste 31 dage.
+      | En avanceret model ligger til grund for beregningen.
+      | Blandt andet tillægges nyere målinger mere vægt end ældre og de enkelte institutter vægtes efter deres måde at indsamle data på.
+      a(href="http://www.b.dk/politiko/nu-giver-vi-meningsmaalingerne-mening" target="_blank") Læs mere.
+  .clearfix
+area-chart
