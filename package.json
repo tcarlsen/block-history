@@ -1,6 +1,6 @@
 {
   "name": "block-history",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a webtool for politiko.dk",
   "author": "tcarlsen",
   "devDependencies": {
