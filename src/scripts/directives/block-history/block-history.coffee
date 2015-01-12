@@ -3,7 +3,7 @@ angular.module "blockHistoryDirective", []
     restrict: "E"
     templateUrl: "/upload/tcarlsen/block-history/partials/block-history.html"
     link: (scope, element, attr) ->
-      currentYear = 2014#new Date().getFullYear()
+      currentYear = new Date().getFullYear()
       polls = []
       scope.view = "percent"
       scope.polls = []
